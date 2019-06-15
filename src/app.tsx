@@ -1,5 +1,8 @@
 import React from 'react'
 import { styled } from 'linaria/react'
+import { Provider } from 'react-redux'
+
+import { store } from './store'
 
 const AppHeader = styled.header`
   border: 5px solid red;
@@ -7,8 +10,10 @@ const AppHeader = styled.header`
 
 export const App: React.FC = () => {
   return (
-    <div>
-      <AppHeader>hello</AppHeader>
-    </div>
+    <Provider store={store}>
+      <div>
+        <AppHeader>hello</AppHeader>
+      </div>
+    </Provider>
   )
 }
