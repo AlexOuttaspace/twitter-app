@@ -2,6 +2,7 @@
   "name": "twitter-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://alexouttaspace.github.io/twitter-app/",
   "dependencies": {
     "date-fns": "^1.30.1",
     "linaria": "^1.3.1",
@@ -14,6 +15,7 @@
     "reset-css": "^4.0.1"
   },
   "devDependencies": {
+    "gh-pages": "^2.0.1",
     "start": "^5.1.0",
     "typescript": "3.5.2",
     "@types/date-fns": "^2.6.0",
@@ -32,6 +34,8 @@
     "prettier": "^1.18.2"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
