@@ -24,7 +24,7 @@ const SubmitButton = styled.button`
   border: none;
   background-color: #31da32;
   border: 2px solid #31da32;
-  color: white;
+  color: #fff;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 `
@@ -41,7 +41,7 @@ export const SearchInput: React.FC = () => {
 
       dispatch(searchPosts(queryValue))
     },
-    [queryValue, dispatch, setQueryValue]
+    [queryValue, dispatch]
   )
 
   return (

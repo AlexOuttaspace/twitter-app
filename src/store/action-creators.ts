@@ -36,13 +36,13 @@ export const searchPosts = (query: string) => async (dispatch: Dispatch) => {
       posts
     }
 
-    dispatch(successAction)
+    return dispatch(successAction)
   } catch (e) {
     const failAction: LoadPostsFailAction = {
       type: actionTypes.LOAD_POSTS_FAIL,
       error: 'Error occured while loading posts'
     }
 
-    dispatch(failAction)
+    return dispatch(failAction)
   }
 }
