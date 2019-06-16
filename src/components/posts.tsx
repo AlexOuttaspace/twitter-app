@@ -22,16 +22,17 @@ export const Posts: React.FC = () => {
   )
 
   if (!alreadySearched) return null
-
   if (loading) return <Spinner />
+
   if (error) return <div>error</div>
   if (posts.length === 0) return <div>No posts were found</div>
 
   return (
     <Root>
-      {posts.map((post) => (
+      {posts.map((post, idx) => (
         <PostItem
           key={post.id}
+          idx={idx}
           id={post.id}
           url={post.url}
           title={post.title}

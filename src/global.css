@@ -5,3 +5,8 @@ body, html {
 * {
   box-sizing: border-box;
 }
+
+*:focus {
+  outline: none;
+  box-shadow: 0 0 4px 1px #41a191;
+}

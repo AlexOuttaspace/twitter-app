@@ -16,14 +16,14 @@ const Input = styled.input`
   font-size: 1.2rem;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
-  border: 2px solid green;
+  border: 2px solid #31da32;
 `
 
 const SubmitButton = styled.button`
   background: none;
   border: none;
-  background-color: green;
-  border: 2px solid green;
+  background-color: #31da32;
+  border: 2px solid #31da32;
   color: white;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
