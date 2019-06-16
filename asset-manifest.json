@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/AlexOuttaspace/twitter-app/static/css/main.6b4ae673.chunk.css",
+    "main.js": "/AlexOuttaspace/twitter-app/static/js/main.c5cbf38d.chunk.js",
+    "main.js.map": "/AlexOuttaspace/twitter-app/static/js/main.c5cbf38d.chunk.js.map",
+    "runtime~main.js": "/AlexOuttaspace/twitter-app/static/js/runtime~main.2ba65c5c.js",
+    "runtime~main.js.map": "/AlexOuttaspace/twitter-app/static/js/runtime~main.2ba65c5c.js.map",
+    "static/css/2.7fad5d03.chunk.css": "/AlexOuttaspace/twitter-app/static/css/2.7fad5d03.chunk.css",
+    "static/js/2.bf54536d.chunk.js": "/AlexOuttaspace/twitter-app/static/js/2.bf54536d.chunk.js",
+    "static/js/2.bf54536d.chunk.js.map": "/AlexOuttaspace/twitter-app/static/js/2.bf54536d.chunk.js.map",
+    "index.html": "/AlexOuttaspace/twitter-app/index.html",
+    "precache-manifest.ce9a46b40252e2b991f3e4b120e5da60.js": "/AlexOuttaspace/twitter-app/precache-manifest.ce9a46b40252e2b991f3e4b120e5da60.js",
+    "service-worker.js": "/AlexOuttaspace/twitter-app/service-worker.js",
+    "static/css/2.7fad5d03.chunk.css.map": "/AlexOuttaspace/twitter-app/static/css/2.7fad5d03.chunk.css.map",
+    "static/css/main.6b4ae673.chunk.css.map": "/AlexOuttaspace/twitter-app/static/css/main.6b4ae673.chunk.css.map"
+  }
+}
