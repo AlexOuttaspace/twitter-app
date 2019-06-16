@@ -4,4 +4,5 @@ export interface Post {
   title: string
   authorName: string
   avatarUrl: string
+  url: string
 }

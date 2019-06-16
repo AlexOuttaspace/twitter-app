@@ -1,6 +1,15 @@
 import React from 'react'
 import { shallowEqual, useSelector } from 'react-redux'
+import { styled } from 'linaria/react'
 import { StoreState } from 'store/types'
+import { PostItem, Spinner } from 'ui'
+import { format } from 'date-fns'
+
+const Root = styled.ul`
+  width: 95%;
+  max-width: 800px;
+  list-style-type: none;
+`
 
 export const Posts: React.FC = () => {
   const { posts, loading, error, alreadySearched } = useSelector(
@@ -12,9 +21,25 @@ export const Posts: React.FC = () => {
     shallowEqual
   )
 
-  if (loading) return <div>Loading...</div>
-  if (error) return <div>error</div>
-  if (posts.length > 0) return <div>{JSON.stringify(posts)}</div>
+  if (!alreadySearched) return null
 
-  return <div>Use search field to find issues on github</div>
+  if (loading) return <Spinner />
+  if (error) return <div>error</div>
+  if (posts.length === 0) return <div>No posts were found</div>
+
+  return (
+    <Root>
+      {posts.map((post) => (
+        <PostItem
+          key={post.id}
+          id={post.id}
+          url={post.url}
+          title={post.title}
+          createdAt={format(post.createdAt, 'DD.MM.YYYY')}
+          avatarUrl={post.avatarUrl}
+          authorName={post.authorName}
+        />
+      ))}
+    </Root>
+  )
 }

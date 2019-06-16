@@ -22,12 +22,13 @@ export const searchPosts = (query: string) => async (dispatch: Dispatch) => {
 
     const data = await response.json()
 
-    const posts: Post[] = data.items.map((item: any) => ({
+    const posts: Post[] = data.items.slice(0, 20).map((item: any) => ({
       id: item.id,
       createdAt: item.created_at,
       title: item.title,
       authorName: item.user.login,
-      avatarUrl: item.user.avatar_url
+      avatarUrl: item.user.avatar_url,
+      url: item.html_url
     }))
 
     const successAction: LoadPostsSuccessAction = {

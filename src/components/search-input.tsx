@@ -1,6 +1,33 @@
 import React, { useState, useCallback } from 'react'
+import { styled } from 'linaria/react'
 import { useDispatch } from 'react-redux'
 import { searchPosts } from 'store'
+
+const Form = styled.form`
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 50px;
+  display: flex;
+`
+
+const Input = styled.input`
+  padding: 8px 14px;
+  flex-grow: 1;
+  font-size: 1.2rem;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border: 2px solid green;
+`
+
+const SubmitButton = styled.button`
+  background: none;
+  border: none;
+  background-color: green;
+  border: 2px solid green;
+  color: white;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+`
 
 export const SearchInput: React.FC = () => {
   const [queryValue, setQueryValue] = useState('')
@@ -13,14 +40,13 @@ export const SearchInput: React.FC = () => {
       if (queryValue === '') return
 
       dispatch(searchPosts(queryValue))
-      setQueryValue('')
     },
     [queryValue, dispatch, setQueryValue]
   )
 
   return (
-    <form onSubmit={onSubmitForm}>
-      <input
+    <Form onSubmit={onSubmitForm}>
+      <Input
         type="text"
         value={queryValue}
         placeholder="Search for github issues"
@@ -28,7 +54,8 @@ export const SearchInput: React.FC = () => {
           setQueryValue(e.target.value)
         }
       />
-      <button type="submit">Search</button>
-    </form>
+
+      <SubmitButton type="submit">SEARCH</SubmitButton>
+    </Form>
   )
 }
