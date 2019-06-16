@@ -6,12 +6,12 @@ import { searchPosts } from 'store'
 const Form = styled.form`
   width: 100%;
   max-width: 600px;
-  margin-bottom: 50px;
   display: flex;
 `
 
 const Input = styled.input`
   padding: 8px 14px;
+  padding-right: 0;
   flex-grow: 1;
   font-size: 1.2rem;
   border-top-left-radius: 5px;
@@ -23,7 +23,6 @@ const SubmitButton = styled.button`
   background: none;
   border: none;
   background-color: #31da32;
-  border: 2px solid #31da32;
   color: #fff;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;

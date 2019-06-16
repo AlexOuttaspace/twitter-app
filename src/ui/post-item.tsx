@@ -8,9 +8,7 @@ const Root = styled.li<{ idx: number }>`
   height: 80px;
   width: 100%;
 
-  :not(:first-child) {
-    margin-top: 20px;
-  }
+  margin-top: 20px;
 
   animation-name: appear;
   animation-timing-function: ease-out;
@@ -39,6 +37,7 @@ const Title = styled.h2`
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  width: 100%;
 `
 
 const CreatedTime = styled.time`

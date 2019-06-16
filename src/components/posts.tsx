@@ -6,9 +6,39 @@ import { PostItem, Spinner } from 'ui'
 import { format } from 'date-fns'
 
 const Root = styled.ul`
-  width: 95%;
-  max-width: 800px;
+  width: 100%;
+  max-width: 850px;
   list-style-type: none;
+  flex-grow: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  ::-webkit-scrollbar {
+    width: 0.5rem;
+    border-radius: 0.1rem;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #ddd;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #42fa42;
+  }
+`
+
+const SpinnerWrapper = styled.div`
+  margin-top: 50px;
+`
+
+const Error = styled.div`
+  margin-top: 50px;
+  font-size: 1.5rem;
+`
+
+const NotFound = styled.div`
+  margin-top: 50px;
+  font-size: 1.5rem;
 `
 
 export const Posts: React.FC = () => {
@@ -22,10 +52,15 @@ export const Posts: React.FC = () => {
   )
 
   if (!alreadySearched) return null
-  if (loading) return <Spinner />
+  if (loading)
+    return (
+      <SpinnerWrapper>
+        <Spinner />
+      </SpinnerWrapper>
+    )
 
-  if (error) return <div>error</div>
-  if (posts.length === 0) return <div>No posts were found</div>
+  if (error) return <Error>{error}</Error>
+  if (posts.length === 0) return <NotFound>No issues were found</NotFound>
 
   return (
     <Root>
